@@ -1,16 +1,14 @@
 #include <iostream>
-using namespaces std;
+using namespace std;
 
-int swap(int *a, int *b){
+void swap(int *a, int *b){
   int temp = *a;
   *a = *b;
-  *b = *a;
+  *b = temp;
 }
 
 int main(){
-  int number1, number2;
-  
-  cin >> number 1 >> number 2;
+  int number1 = 5, number2 = 10;
   
   //declare pointer
   int *pointer1, *pointer2;
@@ -19,5 +17,5 @@ int main(){
   
   swap(pointer1, pointer2);
   
-  cout << number1 << "\t" number2 << endl;
+  cout << number1 << "\t" << number2 << endl;
 }
