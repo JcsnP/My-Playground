@@ -31,9 +31,11 @@ int calculate(int a, int b){
     switch (operatorSelection)
     {
     case 'A':
+    case 'a':
         result = a + b;
         break;
     case 'B':
+    case 'b':
         if(a > b){
             result = a - b;
         } else {
@@ -41,9 +43,11 @@ int calculate(int a, int b){
         }
         break;
     case 'C':
+    case 'c':
         result = a * b;
         break;
     case 'D':
+    case 'd':
         if(a > b){
             result = a / b;
         } else {
