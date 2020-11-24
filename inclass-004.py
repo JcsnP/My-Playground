@@ -27,6 +27,6 @@ for i in range(length):
 #find average
 average = SUM / length
 
-print("Highest score is %s have %d score" %(studentMAX, MAX))
-print("Lowest score is %s have %d score" %(studentMIN, MIN))
+print("Highest score is %s have %.2f score" %(studentMAX, MAX))
+print("Lowest score is %s have %.2f score" %(studentMIN, MIN))
 print("Average score: %.2f" %(average))
