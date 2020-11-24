@@ -10,6 +10,11 @@ int main(){
     printf("Please input number of student in class: ");
     scanf("%d", &length);
     
+    while(length < 1){
+		printf("Invalid number. Please input again: ");
+		scanf("%d", &length);
+	}
+    
     for(int i = 0; i < length; i++){
         printf("Input student name %d: ", i+1);
         scanf("%s", studentName);
@@ -33,6 +38,5 @@ int main(){
     printf("Maximun score %d\n", max);
     printf("Minimun score name: %s\t", studentMin);
     printf("Minimum score %d\n", min);
-    printf("Average score %.2f\n", average);
-    
+    printf("Average score %.2f\n", average);   
 }
