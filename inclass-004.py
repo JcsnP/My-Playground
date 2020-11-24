@@ -6,7 +6,7 @@ length = int(input("How many student in class: "))
 
 while(length < 1):
     #check length if less than 1
-    length = int(input("Invalid number please input more than 1: "))
+    length = int(input("Invalid number. Please input more than 1: "))
 
 for i in range(length):
     #input name and score
