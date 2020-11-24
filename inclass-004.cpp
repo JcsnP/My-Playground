@@ -3,8 +3,7 @@
 
 int main(){
     int length = 0;
-    float score[length], average, sum = 0;
-    int min = 999, max = 0;
+    float score[length], average, sum = 0, min = 999, max = 0;
     char studentName[50], studentMax[50], studentMin[50];
     
     printf("Please input number of student in class: ");
@@ -34,9 +33,10 @@ int main(){
     
     average = sum / length;
     
-    printf("Maximun score name: %s\t", studentMax);
-    printf("Maximun score %d\n", max);
-    printf("Minimun score name: %s\t", studentMin);
-    printf("Minimum score %d\n", min);
-    printf("Average score %.2f\n", average);   
+    printf("Maximun score is: %s  ", studentMax);
+    printf("have %.2f score\n", max);
+    printf("Minimun score is: %s  ", studentMin);
+    printf("have %.2f score\n", min);
+    printf("Average score %.2f\n", average);
+    
 }
