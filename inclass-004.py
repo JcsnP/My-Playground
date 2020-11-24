@@ -1,6 +1,6 @@
 studentScore = [] 
 studentMAX, studentMIN = 0, 0
-length = int(input("How may student in class: "))
+length = int(input("How many student in class: "))
 MAX, MIN, SUM, average = 0, 999, 0, 0 
 
 for i in range(length):
