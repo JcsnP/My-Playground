@@ -1,20 +1,30 @@
-studentScore = [] 
+studentScore = []
+studentName = []
 studentMAX, studentMIN = 0, 0
+MAX, MIN, SUM, average = 0, 999, 0, 0
 length = int(input("How many student in class: "))
-MAX, MIN, SUM, average = 0, 999, 0, 0 
+
+while(length < 1):
+    #check length if less than 1
+    length = int(input("Invalid number please input more than 1: "))
 
 for i in range(length):
+    #input name and score
     name = str(input("Please enter student name: "))
-    score = float(input("Please enter student score: "))
+    studentName.append(name)
+    score = float(input("Please enter %s score: " %name))
     studentScore.append(score)
+    
+    #check score
     if studentScore[i] > MAX:
         MAX = studentScore[i]
-        studentMAX = name
+        studentMAX = studentName[i]
     if studentScore[i] < MIN:
         MIN = studentScore[i]
-        studentMIN = name
+        studentMIN = studentName[i]
     SUM = SUM + score
-
+    
+#find average
 average = SUM / length
 
 print("Highest score is %s have %d score" %(studentMAX, MAX))
