@@ -20,7 +20,7 @@ void lowtohigh(int row){
     }
 }
 
-void test(int row){
+void test1(int row){
     for(int i = 1; i <= row; i++){
         for(int j = row - i; j >= 1; j--){
             cout << " ";
@@ -32,6 +32,20 @@ void test(int row){
     }
 }
 
+void test2(int row){
+    for(int i = row; i >= 1; i--){
+        for(int j = i; j < row; j++){
+            cout << " ";
+        }
+        for(int k = 1; k <= i; k++){
+            cout << "*";
+        }
+        cout << endl;
+    }
+}
+
 int main(){
-    test(15);
+    int row = 5;
+    test1(row);
+    test2(row);
 }
