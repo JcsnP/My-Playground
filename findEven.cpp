@@ -28,3 +28,32 @@ int main(){
 	}
 	
 }
+
+
+/*
+NEW
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[1000], j, i = 0, num, count;
+    
+    do {
+        if(num >= 0){
+            cout << "Please input number. If stop enter -1: ";
+            cin >> num;
+            arr[i] = num;
+            ++i;
+        }
+    } while(num >= 0);
+    
+    for(j = 0; j < i; j++){
+        if(arr[j] % 2 == 0){
+          cout << "Even number: " << arr[j] << endl;
+          ++count;
+        }
+    }
+
+    cout << "Number of even number is: " << count << endl;
+}
+*/
