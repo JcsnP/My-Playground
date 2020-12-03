@@ -18,7 +18,16 @@ for i in range(row):
     arr.append(n)
   m2.append(arr)
 
+#Matrix Addition
+print("Matrix Addition")
 for i in range(len(m1)):
     for j in range(len(m1[0])):
         print(m1[i][j] + m2[i][j], end='\t')
     print("\n")
+
+print("Matrix Subtraction")
+#Matrix Subtraction
+for i in range(len(m1)):
+    for j in range(len(m1[0])):
+        print(m1[i][j] - m2[i][j], end='\t')
+    print("\n")  
