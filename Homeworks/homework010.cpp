@@ -10,18 +10,18 @@ int main(){
 	ofstream file("personal.dat");
 	
 	while(true){
-		string id, name, age, department;
+		string id, name, age, salary, department;
 		
 		cout << "Employee id: "; getline(cin, id);
 		if(id == "0") break;
-		file << id;
-		cout << "Employee First name and Last name: ";
-		getline(cin, name);
-		file << name;
+		cout << "Employee First name and Last name: "; getline(cin, name);
 		cout << "Employee age: "; getline(cin, age);
-		file << age;
+		cout << "Employee salary: "; getline(cin, salary);
 		cout << "Department: "; getline(cin, department);
-		file << department << endl;
+		
+		file << id + " " + name + " " + age + " " + " " + salary + " " + department << endl;	
+		
+		cout << "---------------------------------------------------" << endl;
 	}
 	
 	file.close();
