@@ -6,13 +6,13 @@ def writeFile():
         if(emid == "0"):
             break
         name = str(input("Employee First name and Last name: "))        
-        age = str(input("Employee Age: ")) 
+        age = str(input("Employee Age: "))
+        salary = str(input("Employee Salary: "))
         department = str(input("Employee Department: "))
+
+        file.write("%s %s %s %s %s\n" %(emid, name, age, salary, department))
         
-        file.write(emid)
-        file.write(name)
-        file.write(age)
-        file.write(department + "\n")
+        print("-----------------------------------------------------------")
     
     file.close()
     
