@@ -10,16 +10,23 @@ def writeFile():
         salary = str(input("Employee Salary: "))
         department = str(input("Employee Department: "))
 
-        file.write("%s %s %s %s %s\n" %(emid, name, age, salary, department))
+        file.write("%s,%s,%s,%s,%s\n" %(emid, name, age, salary, department))
         
         print("-----------------------------------------------------------")
     
     file.close()
     
     
+def readFile():
     file = open("personal.dat", "r")
     print("-----------------------------------------------------------")
-    for i in file:
-        print("%s" %(i))
+    while True:
+        string = file.readline()
+        if string == '':
+            break
+        print(string)
+        
+    file.close()
 
 writeFile()
+readFile()
