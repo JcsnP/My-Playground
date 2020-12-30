@@ -4,8 +4,6 @@
 #include <string>
 using namespace std;
 
-//typedef long int ll;
-
 int main(){
 	ofstream file("personal.dat");
 	
@@ -19,7 +17,7 @@ int main(){
 		cout << "Employee salary: "; getline(cin, salary);
 		cout << "Department: "; getline(cin, department);
 		
-		file << id + " " + name + " " + age + " " + " " + salary + " " + department << endl;	
+		file << id + "," + name + "," + age + "," + salary + "," + department << endl;	
 		
 		cout << "---------------------------------------------------" << endl;
 	}
@@ -33,4 +31,6 @@ int main(){
 	while(getline (readFile, mytext)){
 		cout << mytext << endl;
 	}
+	
+	file.close();
 }
