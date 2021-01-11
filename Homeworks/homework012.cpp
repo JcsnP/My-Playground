@@ -169,6 +169,7 @@ int daleteEmployee(){
 		if(employee[i].id == id){
 			EXITS = true;
 		}
+		++i;
 	}
 	
 	if(!(EXITS)){
