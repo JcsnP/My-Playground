@@ -16,9 +16,9 @@ struct EMPLOYEE employee[20];
 
 void createEmployee();
 void displayEmployee();
-void updateEmployee();
-int daleteEmployee();		// check id, (sad)
-void searchEmployee();
+int updateEmployee();
+void daleteEmployee();		// check id, (sad)
+int searchEmployee();
 
 int main(){
 	short int choice;
@@ -112,10 +112,13 @@ void displayEmployee(){
 	FileOpen.close();
 }
 
-void updateEmployee(){
+// TODO add create record, no extis, update employee
+
+int updateEmployee(){
 	string id;
 	short int i = 0;
-	//string dummy;
+	bool EXITS = false;
+	
 	ofstream UpdateFile;
 	UpdateFile.open("employee.dat");
 	
@@ -124,6 +127,53 @@ void updateEmployee(){
 	
 	//getline(cin, dummy);		// Call Dummy
 	cin.ignore();				// BOOKMARK - cin.ignore() for cancel cin >> 
+	
+	while(i < people){
+		if(employee[i].id == id){
+			EXITS = true;
+			break;
+		}
+		++i;
+	}
+	
+	i = 0;
+	
+	// if EXITS is false it mean employee doesn't exit
+	
+	if(!(EXITS)){
+		
+		i = people;
+		++people;
+
+		cout << "Employee ID: ";
+		getline(cin, employee[i].id);
+			
+		cout << "Employee Name: ";
+		getline(cin, employee[i].name);
+		
+		cout << "Employee age: ";
+		getline(cin, employee[i].age);
+		
+		cout << "Employee salary: ";
+		getline(cin, employee[i].salary);
+		
+		cout << "Employee Department: ";
+		getline(cin, employee[i].department);
+		
+		i = 0;
+		
+		// Write File
+		while(i < people){
+			UpdateFile << employee[i].id << "," << employee[i].name << "," << employee[i].age << "," << employee[i].salary << "," << employee[i].department << endl;
+			++i;
+		}
+		
+		UpdateFile.close();
+		
+		return 0;
+	}
+	
+	i = 0;
 	
 	while(i < people){
 		if(employee[i].id == id){
@@ -153,10 +203,9 @@ void updateEmployee(){
 	UpdateFile.close();
 }
 
-int daleteEmployee(){
+void daleteEmployee(){
 	string id;
 	short int i = 0;
-	bool EXITS = false;
 	
 	ofstream FileCreate;
 	FileCreate.open("employee.dat");
@@ -164,6 +213,24 @@ int daleteEmployee(){
 	cout << "What ID you want to delete: ";
 	cin >> id;
 	cin.ignore();				// BOOKMARK - cin.ignore() for cancel cin >> 
+	
+	while(i < people){
+		if(employee[i].id != id){
+			FileCreate << employee[i].id << "," << employee[i].name << "," << employee[i].age << "," << employee[i].salary << "," << employee[i].department << endl;
+		}
+		++i;
+	}
+	
+	FileCreate.close();
+}
+
+int searchEmployee(){
+	short int i = 0;
+	string id;
+	bool EXITS = false;
+	
+	cout << "Please input employee id: ";
+	cin >> id;
 	
 	while(i < people){
 		if(employee[i].id == id){
@@ -180,31 +247,14 @@ int daleteEmployee(){
 	i = 0;
 	
 	while(i < people){
-		if(employee[i].id != id){
-			FileCreate << employee[i].id << "," << employee[i].name << "," << employee[i].age << "," << employee[i].salary << "," << employee[i].department << endl;
-		}
-		++i;
-	}
-	
-	FileCreate.close();
-	
-	return 0;
-}
-
-void searchEmployee(){
-	short int i = 0;
-	string id;
-	
-	cout << "Please input employee id: ";
-	cin >> id;
-	
-	while(i < people){
 		if(employee[i].id == id){
 			cout << employee[i].id << "," << employee[i].name << "," << employee[i].age << "," << employee[i].salary << "," << employee[i].department << endl;
 			break;
 		}
 		++i;
 	}
+	
+	return 0;
 }
 
 /*
