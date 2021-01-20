@@ -1,10 +1,13 @@
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int slot_machine[10] = {1,2,3,4,5,6,7,8,9,10};
 
 void random_slot_machine(int &s1, int &s2, int &s3){
+	srand(time(NULL));
+	
 	// random number between 1 - 10
 	s1 = slot_machine[rand() % 10];
 	s2 = slot_machine[rand() % 10];
