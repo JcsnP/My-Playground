@@ -30,13 +30,13 @@ int main(){ // for insert
 	cout << "Vector Length: ";
 	cin >> N;
 	
-	cout << "Target: ";
-	cin >> X;
-	
 	for(int i = 0; i < N; i++){
 		cout << "Enter number " << i+1 << " : ";
 		cin >> V[i];
 	}
+	
+	cout << "Target: ";
+	cin >> X;
 	
 	// call function --search algorithm
 	searching(V, N, X);
