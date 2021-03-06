@@ -16,12 +16,24 @@ int Delete(int arr[], int N){
         }
     }
 
+    return N;
+}
+
+void Sorting(int arr[], int N){
+    for(int i = 0; i < N-1; i++){
+        for(int j = i+1; j <= N; j++){
+            if(arr[i] > arr[j]){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
     cout << "After" << endl;
     for(int i = 0; i < N; i++){
         cout << arr[i] << endl;
     }
-
-    return N;
 }
 
 void Searching(int arr[], int N){
@@ -67,6 +79,9 @@ int main(){
 
     // call Delete function to delete same value in array and get N
     N = Delete(arr, N);
+
+    // call sorting function
+    Sorting(arr, N);
 
     // call Searching function to search element in array
     Searching(arr, N);
