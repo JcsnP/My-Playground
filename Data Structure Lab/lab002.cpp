@@ -49,13 +49,13 @@ void Searching(int arr[], int N){
 
         for(i = 0; i < N && find >= arr[0]; i++){
             if(find == arr[i]){
-                cout << "Found, at element " << i+1 << " , compare " << i+1 << endl;
+                cout << "Found, at position " << i+1 << " , Number of compare " << i+1 << endl;
                 found = true;
                 break;
             }
         }
         if(found == false){
-            cout << "Not found, compare " << i << endl;
+            cout << "Not found, Number of compare " << i << endl;
         }
 
         // choice
