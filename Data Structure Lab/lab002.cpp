@@ -2,7 +2,6 @@
 using namespace std;
 
 int Delete(int arr[], int N){
-
     for(int i = 0; i < N; ++i){
         for(int j = i+1; j < N;){
             if(arr[i] == arr[j]){
@@ -15,13 +14,12 @@ int Delete(int arr[], int N){
             }
         }
     }
-
     return N;
 }
 
 void Sorting(int arr[], int N){
     for(int i = 0; i < N-1; i++){
-        for(int j = i+1; j <= N; j++){
+        for(int j = i+1; j < N; j++){
             if(arr[i] > arr[j]){
                 int temp = arr[i];
                 arr[i] = arr[j];
@@ -55,12 +53,13 @@ void Searching(int arr[], int N){
             }
         }
         if(found == false){
-            cout << "Not found, Number of compare " << i << endl;
+            cout << "Not found, Number of compare " << i+1 << endl;
         }
 
         // choice
         cout << endl << "Find again ? [y]/[n]: ";
         cin >> choice;
+		if(choice == 'n') break;
     }
 }
 
