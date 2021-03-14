@@ -6,8 +6,14 @@ class Node:
 class LinkedList():
     def __init__(self):
         self.first = None
+        
+    def insert(self):
+        N = int(input("How many node ?: "))
+        while N >= 1:
+            LL.insertAndSort(int(input("Enter number: ")))
+            N = N - 1
     
-    def insert(self, data):
+    def insertAndSort(self, data):
         new_node = Node()
         new_node.data = data
         
@@ -21,38 +27,18 @@ class LinkedList():
             if temp.data == data:
                 print("Data is exits")
                 return 0 # don't use 'break'
-            elif temp.data > data:
+            elif data > temp.data:
                 new_node.next = temp
                 self.first = new_node
                 break
-            elif temp.next.data > data:
-                break
             
-            # พอสลับ บรรทัดแล้วได้เฉย [elif อันที่ 2 กับ 3]
             # Linked to other linked list
             temp = temp.next
             
         new_node.next = temp.next
         temp.next = new_node
         
-        '''
-        while found == False:
-            if(self.first is None):
-                self.first = new_node
-                found = True
-            elif(temp.data == data):
-                print("Data is exits!")
-                break
-            elif(temp.data < data):
-                new_node.next = temp
-                self.next = new_node
-                found = True
-            while(temp.next):
-                if temp.next.data > data:
-                    break
-                temp = temp.next
-            '''
-    def detete(self, data):
+    def delete(self, data):
         temp = self.first
         while temp.data is not data:
             temp = temp.next
@@ -74,22 +60,33 @@ class LinkedList():
             print(current.data, end = " -> ")
             current = current.next   
         print("None")
-        
+
+# main
+# create Linked List
+
 LL = LinkedList()
-LL.insert(20)
-LL.insert(15)
-LL.insert(30)
-LL.insert(5)
-LL.insert(25)
-LL.insert(20)
-LL.insert(36)
-LL.insert(10)
-LL.insert(15)
-
-LL.find(20)
-
-# delete
-# LL.detete(30)
-
-# show all node
+'''
+while True:
+    choice = int(input("[1] Insert\n[2] Traverse\n[3] Delete\n[4] Find\n[0] Exit\n"))
+    # menu
+    if choice == 0:
+        break
+    elif choice == 1:
+        LL.insert()
+    elif choice == 2:
+        LL.display()
+    elif choice == 3:
+        N = int(input("Input data to delete: "))
+        LL.delete(N)
+    elif choice == 4:
+        N = int(input("Input data to find: "))
+        LL.find(N)
+    else:
+        print("Invalid Choice")
+'''
+LL.insertAndSort(9)
+LL.insertAndSort(7)
+LL.insertAndSort(5)
+LL.insertAndSort(3)
+LL.insertAndSort(1)
 LL.display()
