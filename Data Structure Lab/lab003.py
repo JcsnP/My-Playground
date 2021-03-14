@@ -23,13 +23,15 @@ class LinkedList():
         
         temp = self.first
         
+        if temp.data > data:
+            new_node.next = temp
+            self.first = new_node
+            return
         while temp.next:
-            if temp.data == data:
-                print("Data is exits")
-                return 0 # don't use 'break'
-            elif data > temp.data:
-                new_node.next = temp
-                self.first = new_node
+            if temp.next.data == data:
+                print("Data is exit")
+                return
+            if temp.next.data > data:
                 break
             
             # Linked to other linked list
@@ -50,8 +52,12 @@ class LinkedList():
         i = 0
         while temp.next:
             i = i + 1
-            if temp.data == data:
+            if data == temp.data:
                 print("found, compare = %d" %(i))
+                break
+            elif data < temp.data:
+                print("not found, compare = %d" %(i))
+                break
             temp = temp.next
     
     def display(self):
@@ -65,7 +71,9 @@ class LinkedList():
 # create Linked List
 
 LL = LinkedList()
-'''
+
+LL.display()
+
 while True:
     choice = int(input("[1] Insert\n[2] Traverse\n[3] Delete\n[4] Find\n[0] Exit\n"))
     # menu
@@ -74,7 +82,7 @@ while True:
     elif choice == 1:
         LL.insert()
     elif choice == 2:
-        LL.display()
+s        LL.display()
     elif choice == 3:
         N = int(input("Input data to delete: "))
         LL.delete(N)
@@ -83,10 +91,3 @@ while True:
         LL.find(N)
     else:
         print("Invalid Choice")
-'''
-LL.insertAndSort(9)
-LL.insertAndSort(7)
-LL.insertAndSort(5)
-LL.insertAndSort(3)
-LL.insertAndSort(1)
-LL.display()
