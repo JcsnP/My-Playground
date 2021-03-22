@@ -7,7 +7,6 @@ auto greeting(auto name){
 }
 
 int main(){
-    greeting("James");
+    greeting("James"); // James
+    greeting(3200); // 3200
 }
-
-// ouput -> James
